@@ -54,14 +54,22 @@
 		CB8B75931C10BE15004D20D1 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				CB8B75941C10BE15004D20D1 /* AppDelegate.swift */,
 				CB8B75961C10BE15004D20D1 /* ViewController.swift */,
 				CB8B75981C10BE15004D20D1 /* Main.storyboard */,
-				CB8B759B1C10BE15004D20D1 /* Assets.xcassets */,
-				CB8B759D1C10BE15004D20D1 /* LaunchScreen.storyboard */,
-				CB8B75A01C10BE15004D20D1 /* Info.plist */,
+				CB8B75A61C10BE7E004D20D1 /* Supporting Files */,
 			);
 			path = Calculator;
+			sourceTree = "<group>";
+		};
+		CB8B75A61C10BE7E004D20D1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CB8B75A01C10BE15004D20D1 /* Info.plist */,
+				CB8B759D1C10BE15004D20D1 /* LaunchScreen.storyboard */,
+				CB8B759B1C10BE15004D20D1 /* Assets.xcassets */,
+				CB8B75941C10BE15004D20D1 /* AppDelegate.swift */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,9 +257,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Calculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.md.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -260,9 +270,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Calculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.md.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
