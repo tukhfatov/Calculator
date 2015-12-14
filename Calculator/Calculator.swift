@@ -15,23 +15,31 @@ class Calculator {
     private var prevOperation:String = ""
     
     
-    func pushOperand(operand:Double) ->Double? {
+    func pushOperand(operand:Double) ->Double {
         operandStack.append(operand)
         return operand
     }
     
     func operate(operation: String)->Double? {
-        if operandStack.count >= 2 || operation == "="{
+        if operandStack.count >= 2 {
             switch prevOperation{
-            case "+": return performOperation { $0 + $1 }
-            case "−": return performOperation { $1 - $0 }
-            case "×": return performOperation { $0 * $1 }
-            case "÷": return performOperation { $1 / $0 }
+            case "+":
+                prevOperation = operation
+                return performOperation { $0 + $1 }
+            case "−":
+                prevOperation = operation
+                return performOperation { $1 - $0 }
+            case "×":
+                prevOperation = operation
+                return performOperation { $0 * $1 }
+            case "÷":
+                prevOperation = operation
+                return performOperation { $1 / $0 }
+            case "=": return operate(prevOperation)
             default: break
             }
-        }else{
-            prevOperation = operation
         }
+        prevOperation = operation
         return nil
     }
     

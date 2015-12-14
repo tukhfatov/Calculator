@@ -32,7 +32,8 @@ class ViewController: UIViewController
     @IBAction func operate(sender: UIButton) {
         
         if userIsInTheMiddleOfTypingANumber {
-            storeDisplayValue()
+            calculatorModel.pushOperand(displayValue)
+            userIsInTheMiddleOfTypingANumber = false
         }
        
         if let operation = sender.currentTitle {
@@ -46,14 +47,6 @@ class ViewController: UIViewController
         userIsInTheMiddleOfTypingANumber = false
         calculatorModel.clearAll()
         displayValue = 0.0
-    }
-    func storeDisplayValue () {
-        userIsInTheMiddleOfTypingANumber = false
-        if let result = calculatorModel.pushOperand(displayValue) {
-            displayValue = result
-        }else{
-            displayValue = 0.0
-        }
     }
     
     var displayValue:Double {
