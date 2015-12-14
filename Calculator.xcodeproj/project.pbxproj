@@ -12,6 +12,7 @@
 		CB8B759A1C10BE15004D20D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB8B75981C10BE15004D20D1 /* Main.storyboard */; };
 		CB8B759C1C10BE15004D20D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB8B759B1C10BE15004D20D1 /* Assets.xcassets */; };
 		CB8B759F1C10BE15004D20D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB8B759D1C10BE15004D20D1 /* LaunchScreen.storyboard */; };
+		CB8B75CB1C1B6FA5004D20D1 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8B75CA1C1B6FA5004D20D1 /* Calculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		CB8B759B1C10BE15004D20D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB8B759E1C10BE15004D20D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB8B75A01C10BE15004D20D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB8B75CA1C1B6FA5004D20D1 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		CB8B75931C10BE15004D20D1 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				CB8B75C81C1B6F8C004D20D1 /* Model */,
 				CB8B75961C10BE15004D20D1 /* ViewController.swift */,
 				CB8B75981C10BE15004D20D1 /* Main.storyboard */,
 				CB8B75A61C10BE7E004D20D1 /* Supporting Files */,
@@ -70,6 +73,14 @@
 				CB8B75941C10BE15004D20D1 /* AppDelegate.swift */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CB8B75C81C1B6F8C004D20D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB8B75CA1C1B6FA5004D20D1 /* Calculator.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB8B75CB1C1B6FA5004D20D1 /* Calculator.swift in Sources */,
 				CB8B75971C10BE15004D20D1 /* ViewController.swift in Sources */,
 				CB8B75951C10BE15004D20D1 /* AppDelegate.swift in Sources */,
 			);

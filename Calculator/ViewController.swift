@@ -15,8 +15,9 @@ class ViewController: UIViewController
     
     var userIsInTheMiddleOfTypingANumber = false
     var nextOperand:String = ""
-    var operandArray = Array<Double>()
 
+    var calculatorModel = Calculator()
+    
     @IBAction func appendDigit(sender: UIButton)
     {
         let digit = sender.currentTitle!
@@ -29,41 +30,30 @@ class ViewController: UIViewController
     }
     
     @IBAction func operate(sender: UIButton) {
-        let operation = sender.currentTitle!
         
         if userIsInTheMiddleOfTypingANumber {
             storeDisplayValue()
         }
-        if operandArray.count >= 2 || operation == "="{
-            switch nextOperand{
-                case "+": performOperation { $0 + $1 }
-                case "−": performOperation { $0 - $1 }
-                case "×": performOperation { $0 * $1 }
-                case "÷": performOperation { $1 / $0 }
-                default: break
-            }
-        }
-        nextOperand = operation
        
+        if let operation = sender.currentTitle {
+                if let result = calculatorModel.operate(operation){
+                    displayValue = result
+                }
+        }
     }
     
     @IBAction func clearAll() {
-        operandArray.removeAll()
         userIsInTheMiddleOfTypingANumber = false
-        displayValue = 0
-    }
-    func performOperation ( operation: (Double, Double)-> Double){
-        var result: Double = 0.0
-        if operandArray.count >= 2 {
-            result =  operation( operandArray.removeLast(), operandArray.removeLast())
-            displayValue = result
-            operandArray.append(result)
-        }
+        calculatorModel.clearAll()
+        displayValue = 0.0
     }
     func storeDisplayValue () {
-        
         userIsInTheMiddleOfTypingANumber = false
-        operandArray.append(displayValue)
+        if let result = calculatorModel.pushOperand(displayValue) {
+            displayValue = result
+        }else{
+            displayValue = 0.0
+        }
     }
     
     var displayValue:Double {
